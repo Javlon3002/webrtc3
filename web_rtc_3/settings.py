@@ -4,8 +4,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Dev-only key — change for production
 SECRET_KEY = "dev-only-change"
-DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+DEBUG = False
+
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "umikt-communication.tech",
+    "www.umikt-communication.tech",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin","django.contrib.auth","django.contrib.contenttypes",
