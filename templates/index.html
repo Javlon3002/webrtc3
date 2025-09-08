@@ -1,0 +1,60 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Meeting</title>
+  <link rel="stylesheet" href="{% static 'app.css' %}">
+</head>
+<body>
+<header class="topbar">
+  <div class="spacer"></div>
+  <div class="actions">
+    <button id="joinBtn">Join</button>
+    <button id="leaveBtn" disabled>Leave</button>
+  </div>
+</header>
+
+<main class="grid">
+  <!-- Left: Local -->
+  <section class="panel">
+    <h2>You (local)</h2>
+    <video id="localVideo" autoplay playsinline muted></video>
+    <div class="controls">
+      <button id="toggleMicBtn" disabled>Mute mic</button>
+      <button id="toggleCamBtn" disabled>Camera off</button>
+    </div>
+  </section>
+
+  <!-- Middle: Remote A -->
+  <section class="panel">
+    <div class="row">
+      <h2>Remote A</h2>
+      <select id="remoteSelect1" class="select" disabled></select>
+    </div>
+    <video id="remoteVideo1" autoplay playsinline></video>
+  </section>
+
+  <!-- Right: Remote B -->
+  <section class="panel">
+    <div class="row">
+      <h2>Remote B</h2>
+      <select id="remoteSelect2" class="select" disabled></select>
+    </div>
+    <video id="remoteVideo2" autoplay playsinline></video>
+  </section>
+</main>
+
+<section class="logwrap">
+  <pre id="log"></pre>
+</section>
+
+<!-- Vendor libs -->
+<script src="{% static 'vendor/adapter.js' %}"></script>
+<script src="{% static 'vendor/janus.js' %}"></script>
+
+<!-- App -->
+<script src="{% static 'app.js' %}"></script>
+</body>
+</html>
